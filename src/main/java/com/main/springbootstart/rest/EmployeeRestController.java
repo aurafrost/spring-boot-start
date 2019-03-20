@@ -14,15 +14,17 @@ import com.main.springbootstart.entity.Employee;
 @RequestMapping("/")
 public class EmployeeRestController {
 	private EmployeeDAO employeeDAO;
-	//inject dao
+
+	// inject dao
 	@Autowired
 	public EmployeeRestController(EmployeeDAO employeeDAO) {
-		this.employeeDAO=employeeDAO;
+		this.employeeDAO = employeeDAO;
 	}
-	//expose and return list of employees
+
+	// expose and return list of employees
 	@GetMapping("/")
-	public List<Employee>findAll(){
+	public List<Employee> findAll() {
 		return employeeDAO.findAll();
 	}
-	
+
 }
